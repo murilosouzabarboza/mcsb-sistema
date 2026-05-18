@@ -28,7 +28,7 @@ export default function Login({ onLogin }) {
         return
       }
 
-      const senhaEsperada = data.nome.toLowerCase().slice(0, 4) + '2024'
+   const senhaEsperada = data.nome.toLowerCase().replace(/\s/g, '').slice(0, 4) + '2024'
       if (senha !== senhaEsperada) {
         setErro('Senha incorreta.')
         setCarregando(false)
